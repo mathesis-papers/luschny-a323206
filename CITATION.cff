@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this work, cite it."
+title: "OEIS A323206, COMMENTS (revision 52): Proof of Luschny's parity conjecture and binary consequences"
+authors:
+  - name: "Haobo Ma"
+  - name: "Wenlin Zhang"
+date-released: "2026-11-22"
+version: "2"
+url: "https://mathesis-omega-research.apps.chrono-ai.fun/papers/luschny-a323206?version=2"
+license: "CC-BY-4.0"

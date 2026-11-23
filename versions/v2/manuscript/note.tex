@@ -1,0 +1,423 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[T1]{fontenc}
+\usepackage[colorlinks=true,urlcolor=blue,citecolor=blue,linkcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newcommand{\NN}{\mathbb N_0}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\FF}{\mathbb F_2}
+\title{OEIS A323206, COMMENTS (revision 52):\\
+  \large Proof of Luschny's parity conjecture and binary consequences}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+  \and Wenlin Zhang\\\small National University of Singapore\\
+  \small ChronoAI Pte Ltd, Singapore}
+\date{November 8, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove Peter Luschny's conjecture in OEIS A323206, COMMENTS,
+revision 52 (first posed in revision 17, February 21, 2019):
+for all nonnegative $n,k$, the terminating hypergeometric value $A(n,k)$ is
+odd precisely when $n$ is even or $k+2$ is a positive power of two.
+Its coefficients are integer ballot numbers, and their sum is $C_{k+1}$.
+Thus evaluation modulo two reduces to the constant coefficient or a
+Catalan number. A binary product describes the complete coefficient
+support; its consequences include the linked rows, columns, three
+adjacent diagonals, antidiagonal sums and generalized ballot triangle.
+\end{abstract}
+
+\section{The conjecture and its finite interpretation}
+Luschny's entry \cite{posing}, contributed February 21, 2019, labels its
+parity statement a ``Conjecture.'' Its first occurrence is revision 17,
+COMMENTS, February 21, 2019; revision 52 retains it unchanged.
+We prove that statement for every
+$n,k\in\NN$, including the zero boundaries. In the NAME and COMMENTS of
+revision 52 (March 15, 2026), the array and conjecture are
+\begin{align}
+ A(n,k)&={}_2F_1(-k,k+1;-k-1;n),\label{array}\\
+ A(n,k)\text{ odd}&\iff n\text{ even}\ \text{or}\
+ \bigl(n\text{ odd and }k+2=2^e\text{ for some }e>0\bigr).\label{conj}
+\end{align}
+Here the hypergeometric notation denotes the terminating polynomial
+\begin{equation}
+ P_k(t)=\sum_{j=0}^{k}
+   \frac{(-k)_j(k+1)_j}{(-k-1)_j\,j!}\,t^j,
+ \qquad (a)_j=\prod_{r=0}^{j-1}(a+r),\qquad A(n,k)=P_k(n).
+ \label{finite}
+\end{equation}
+An empty product and $t^0$, including $0^0$, equal one. Every denominator
+in this finite sum is nonzero: if $r<j\le k$, then $-k-1+r\ne0$.
+No infinite-series interpretation at a lower-parameter pole is needed.
+
+The ballot-number expressions in the FORMULA section of A323206 and the
+Catalan triangle A009766 \cite{ballot} supply the integer structure behind
+the conjecture. Catalan parity itself is classical; A000108 records both
+the Catalan formula and its binary valuation \cite{catalan}.
+Earlier proofs of Catalan parity include E\u{g}ecio\u{g}lu (1983)
+\cite{egecioglu}; Deutsch and Sagan (2004; published 2006),
+Theorem 2.1 \cite{deutsch}, give the full binary valuation.
+These results concern the Catalan ingredient; the two-parameter
+classification follows by the polynomial reduction below. Abate and
+Whitt (2011), equations (4), (9)--(10) \cite{abate}, already give these
+generalized Catalan polynomials in the notation
+$C_{k+1}(t)=P_k(t)$, with the same ballot coefficients.
+We give the
+needed identities and their proofs below, so the parity argument is
+self-contained.
+
+\begin{theorem}\label{main}
+For every $k\in\NN$, $P_k$ has integer coefficients. For every integer $t$,
+\[
+ P_k(t)\equiv
+ \begin{cases}
+ 1 &\pmod2,\quad t\text{ even},\\
+ C_{k+1}&\pmod2,\quad t\text{ odd},
+ \end{cases}
+ \qquad C_m=\frac1{m+1}\binom{2m}{m}.
+\]
+Consequently \eqref{conj} holds for all $n,k\in\NN$; the same criterion
+holds for $P_k(t)$ at negative integers.
+\end{theorem}
+
+\section{Ballot coefficients and Catalan parity}
+We take $\binom ab=0$ when $b<0$ or $b>a$, with $a\in\NN$.
+
+\begin{lemma}\label{coeff}
+For $0\le j\le k$, the coefficient of $t^j$ in $P_k(t)$ is
+\begin{equation}
+ b_{k,j}=\binom{k+j}{j}-\binom{k+j}{j-1}.
+ \label{ballot}
+\end{equation}
+In particular $b_{k,0}=1$, and $\sum_{j=0}^k b_{k,j}=C_{k+1}$.
+\end{lemma}
+\begin{proof}
+Cancellation of the nonzero factors in \eqref{finite} gives
+\[
+ \frac{(-k)_j}{(-k-1)_j}=\frac{k+1-j}{k+1},\qquad
+ \frac{(k+1)_j}{j!}=\binom{k+j}{j}.
+\]
+For $j\ge1$, the ratio of $\binom{k+j}{j-1}$ to
+$\binom{k+j}{j}$ is $j/(k+1)$, proving \eqref{ballot}; the case $j=0$
+is immediate. Also, for $j\ge1$,
+\[
+ b_{k,j}=\frac{k-j+1}{j}\binom{k+j}{k+1}.
+\]
+Replacing $j$ by $k-j$ in this identity and in \eqref{ballot} gives
+the other two finite binomial-sum formulas in A323206.
+The two hockey-stick identities, obtained by telescoping
+Pascal's rule, give
+\[
+ \sum_{j=0}^k\binom{k+j}{j}=\binom{2k+1}{k},\qquad
+ \sum_{j=1}^k\binom{k+j}{j-1}=\binom{2k+1}{k-1}.
+\]
+Their difference is
+\[
+ \binom{2k+1}{k}-\binom{2k+1}{k-1}
+ =\frac{2}{k+2}\binom{2k+1}{k}
+ =\frac{1}{k+2}\binom{2k+2}{k+1}=C_{k+1}.
+\]
+The same identities include $k=0$ under the stated convention.
+\end{proof}
+
+\begin{lemma}\label{catparity}
+For every $m\in\NN$, $C_m$ is odd if and only if $m+1$ is a power of two.
+\end{lemma}
+\begin{proof}
+Write $s_2(a)$ for the number of ones in the binary expansion of $a$,
+and $v_2(a)$ for the exponent of two in a positive integer $a$.
+Counting the multiples of $2^r$ in $a!$ gives
+\[
+ v_2(a!)=\sum_{r\ge1}\left\lfloor\frac{a}{2^r}\right\rfloor
+ =a-s_2(a).
+\]
+The second equality follows by summing the contribution $2^i-1$ of
+each nonzero binary digit $2^i$. Since $s_2(2m)=s_2(m)$, the Catalan
+formula yields
+\[
+ v_2(C_m)=s_2(m)-v_2(m+1)=s_2(m+1)-1.
+\]
+For the last equality, adding one to $m$ removes its $v_2(m+1)$ trailing
+ones and inserts one new one. The valuation is zero exactly when $m+1$
+has a single nonzero binary digit. This also covers $m=0$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{main}]
+Lemma~\ref{coeff} proves integrality. In $\FF$, an even integer is zero
+and an odd integer is one. Thus $P_k(t)$ reduces to $b_{k,0}=1$ in the
+first case and to $\sum_j b_{k,j}=C_{k+1}$ in the second.
+Lemma~\ref{catparity}, with $m=k+1$, gives $k+2=2^e$; since $k+2\ge2$,
+the exponent satisfies $e>0$. These implications are equivalences,
+so they prove both directions of the conjecture.
+\end{proof}
+
+\begin{corollary}[Coefficientwise binary support]\label{binary}
+For $0\le j\le k$, $b_{k,j}$ is odd precisely when $j$ and $k+1$ have
+no common nonzero binary digit. Equivalently,
+\[
+ P_k(t)\equiv\sum_{\substack{0\le j\le k\\j\mathbin{\&}(k+1)=0}}t^j
+ \quad\text{in }\FF[t],
+\]
+where $\mathbin{\&}$ denotes binary bitwise AND.
+\end{corollary}
+\begin{proof}
+Subtraction equals addition in $\FF$, so Pascal's rule gives
+$b_{k,j}\equiv\binom{k+j+1}{j}\pmod2$.
+If $N=\sum_i\epsilon_i2^i$ is a binary expansion, then
+$(1+x)^N=\prod_{\epsilon_i=1}(1+x^{2^i})$ in $\FF[x]$.
+Its $x^j$ coefficient is one exactly when the binary digits of $j$
+are a subset of those of $N$. For $N=j+(k+1)$ this is equivalent to
+addition without a carry: disjoint nonzero digits give this property;
+if a common nonzero digit exists, the lowest such digit produces a zero
+in the sum where $j$ has a one. This proves the criterion.
+\end{proof}
+
+\begin{corollary}[Binary factorization]\label{product}
+Put $m=k+1$ and $h=\lfloor\log_2 m\rfloor$. Write $m_i$ for the $i$th
+binary digit of $m$, and let $s_2(m)$ count its nonzero digits. Then
+\[
+ P_k(t)=\prod_{\substack{0\le i<h\\m_i=0}}(1+t^{2^i})
+ \quad\text{in }\FF[t].
+\]
+Exactly $2^{h+1-s_2(m)}$ coefficients of $P_k$ are odd, and the degree
+of its reduction modulo two is $2^{h+1}-m-1$.
+\end{corollary}
+\begin{proof}
+Corollary~\ref{binary} allows exactly the subsets of the zero digits of
+$m$ below its highest digit. Every such subset gives an index less than
+$2^h\le m$, hence at most $k$; a permissible index cannot have a higher
+digit. Expanding the product therefore gives precisely that support,
+with no repeated exponents. There are $h+1-s_2(m)$ free digits, and their
+sum is $(2^h-1)-(m-2^h)$, proving the count and degree, including $m=1$.
+\end{proof}
+
+\begin{corollary}\label{generating}
+Let $C(x)=\sum_{r\ge0}C_rx^r$ and
+$G(t,x)=\sum_{k\ge0}P_k(t)x^k$. In $\ZZ[t][[x]]$,
+\begin{equation}
+ G(t,x)=\frac{C(tx)}{1-xC(tx)},\qquad
+ 1+xG(t,x)=\frac1{1-xC(tx)}.\label{gf}
+\end{equation}
+If $U=xG(t,x)$, then
+\[
+ x=\frac{U(1-(t-1)U)}{(1+U)^2}.
+\]
+Thus $U$ is the compositional inverse of
+$y(1-(t-1)y)/(1+y)^2$. Also $1+xG$ is the formal continued fraction
+with first numerator $x$ and every subsequent numerator $tx$,
+all subtracted from unit denominators.
+\end{corollary}
+\begin{proof}
+Extend $b_{k,j}$ by zero outside $0\le j\le k$. Pascal's rule gives
+$b_{k,j}=b_{k,j-1}+b_{k-1,j}$ for $k\ge1$, $1\le j\le k$,
+and $b_{k,k}=C_k$. Hence
+$(1-t)P_k=P_{k-1}-C_kt^{k+1}$. Summation over $k\ge1$ gives
+$(1-t-x)G=1-tC(tx)$.
+The identity $C(tx)=1+txC(tx)^2$ shows that the right side of
+\eqref{gf} satisfies this equation. Multiplication by $1-t-x$ is
+injective in the integral domain $\ZZ[t][[x]]$, proving \eqref{gf}
+without division by $1-t$. Eliminating $C(tx)$ from
+$U=xC(tx)/(1-xC(tx))$ gives the inverse equation. Its linear
+coefficient is one, so the inverse is unique. Finally the tail of the
+continued fraction is $C(tx)=1/(1-txC(tx))$; substitution gives
+$1/(1-xC(tx))$. Finite truncations stabilize coefficientwise.
+\end{proof}
+
+\section{Consequences for the linked sequences}
+Theorem~\ref{main} settles the parity of every fixed row and column:
+even-$n$ rows are entirely odd, odd-$n$ rows have odd entries exactly at
+$k=2^e-2$ ($e\ge1$), and a column is entirely odd precisely at those
+indices $k$. In particular $A(0,k)=1$ and $A(1,k)=C_{k+1}$ by
+Lemma~\ref{coeff}. The three diagonal sequences and the antidiagonal
+sums linked from A323206 have the following explicit consequences
+\cite{diagonals,sums}.
+
+\begin{corollary}\label{siblings}
+For $r\in\NN$, put $S_r=\sum_{k=0}^r A(r-k,k)$. Then
+\begin{align*}
+ A(r,r)\text{ odd}&\iff r\text{ even},\\
+ A(r,r+1)\text{ odd}&\iff r\text{ even or }r=2^e-3\ (e\ge2),\\
+ A(r+1,r)\text{ odd}&\iff r\text{ odd or }r=2^e-2\ (e\ge1),\\
+ S_{2m}&\equiv m+1\pmod2,\\
+ S_{2m+1}&\equiv m+1+\lfloor\log_2(2m+2)\rfloor\pmod2\quad(m\in\NN).
+\end{align*}
+\end{corollary}
+\begin{proof}
+Substitute the two indices into Theorem~\ref{main}. On the main diagonal,
+odd $r$ makes $r+2$ odd and at least three, hence not a power of two.
+The other two substitutions give the displayed conditions, including
+their lower bounds on $e$.
+For $S_r$, an even first index contributes one; there are
+$\lfloor r/2\rfloor+1$ such indices. If $r=2m$, the odd first indices
+have odd second index $k$, so none has $k+2$ a power of two.
+If $r=2m+1$, the additional odd contributions are exactly
+$k=2^e-2\le r-1$, or $1\le e\le\lfloor\log_2(r+1)\rfloor$.
+Counting these contributions proves both congruences.
+\end{proof}
+
+\begin{corollary}[Rows, columns and the generalized Catalan triangle]
+\label{rows}
+For the linked sequences \cite{rows}, use the following index conventions.
+Let $R_m(0)=1$ and $R_m(s)=P_{s-1}(m)$ for $s\ge1$. Then
+\[
+ R_m(s)\text{ odd}\iff m\text{ even or }s+1=2^e\ (e\ge1),
+ \qquad(s\ge1).
+\]
+These are the generalized Catalan rows A064062, A064063 and
+A064087--A064091 for $m=2,3,4,5,6,7,8$, respectively, with their
+initial term retained. The six columns A001844, A064096,
+A064302--A064305 are $P_k(n)$ for $k=2,3,4,5,6,7$:
+the first and fifth are entirely odd; the other four are odd exactly
+at even $n$.
+
+In the notation $T(N,m)$ of A064094, $0\le m\le N$,
+\[
+ T(N,N)=1,\quad T(N,m)=P_{N-m-1}(m)\ (N>m),
+\]
+so for $N>m$ it is odd exactly when $m$ is even or
+$N-m+1$ is a power of two.
+\end{corollary}
+\begin{proof}
+The row entries have generating function $1/(1-xC(mx))$;
+Corollary~\ref{generating} gives the stated shift. Their parity is
+Theorem~\ref{main} with $k=s-1$. Substituting the six fixed $k$ values
+proves the column statements. The column-$m$ generating function in
+A064094 is $x^m/(1-xC(mx))$; extracting coefficients gives its displayed
+identification, including $m=0$, and then the parity criterion.
+\end{proof}
+
+\begin{corollary}[Generalized ballot numbers]\label{generalballot}
+Use A238762's ballot notation $B(p,q)$, $0\le p\le q$. For
+$0\le j\le k$,
+\[
+ B(2j,2k)=b_{k,j},\qquad
+ B(2j+1,2k+1)=(k+j+1)b_{k,j}.
+\]
+Mixed-parity arguments give zero. Consequently the even-even value is
+odd exactly when $j\mathbin{\&}(k+1)=0$; the odd-odd value is odd exactly
+when this condition holds and $k+j$ is even.
+\end{corollary}
+\begin{proof}
+Substitution of the two parity choices into A238762's explicit
+binomial formula gives the two displayed identities; its parity
+factor is zero for mixed arguments. Apply Corollary~\ref{binary} and
+reduce the factor $k+j+1$ modulo two.
+\end{proof}
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{0.39\linewidth}p{0.55\linewidth}@{}}
+\toprule
+Source item & Coverage\\
+\midrule
+A323206, COMMENTS, revisions 17 and 52 & Proved: the quoted
+conjecture, Theorem~\ref{main}.\\
+A323206, the three finite binomial sums & Proved by Lemma~\ref{coeff},
+  including the substitution $j\mapsto k-j$.\\
+A323206, formal g.f., pseudo reversion and continued fraction &
+  Proved: Corollary~\ref{generating}, including its coefficient shift.\\
+A323206, EXAMPLE and CROSSREFS rows/columns; A064094 &
+  Not posed; parity proved in Corollary~\ref{rows}. $n=0,1$ are exact.\\
+A323209, A323208, A323217, finite sums & Proved by the corresponding
+  substitutions in Lemma~\ref{coeff}; parity not posed, proved in
+  Corollary~\ref{siblings}.\\
+A323207, finite sums & Proved by summing Lemma~\ref{coeff};
+  antidiagonal parity not posed, proved in Corollary~\ref{siblings}.\\
+A009766; A238762, explicit ballot formulas & Classical formulas;
+  parity not posed, proved in Corollaries~\ref{binary}, \ref{product}
+  and \ref{generalballot}.\\
+A000108, Catalan parity and valuation & Prior proofs cited:
+  E\u{g}ecio\u{g}lu (1983), Deutsch--Sagan (2004/2006); Lemma~\ref{catparity}.\\
+A323206, integral, asymptotic and Maple recurrence;
+  A323208/209/217, integral and asymptotic formulas & Not covered.\\
+Other formulas/questions in the row, column and ballot entries &
+  Not covered beyond the explicit identifications and parity above.\\
+\bottomrule
+\end{tabular}
+\end{center}
+The linked diagonal and sum entries contain formulas, not additional
+parity conjectures. The corollaries above state consequences rather than
+attribute new conjectures to their authors.
+
+\section{Mathematical verification coverage}
+The pinned Lean source
+\href{https://github.com/the-omega-institute/trureturing/blob/b0f7c01b01511ea00428c1b6edad5dd2b372eaf8/D5/S1/Recurrence/Invariants/LuschnyA323206Parity.lean}
+{\texttt{LuschnyA323206Parity.lean}}
+contains the declaration
+\begin{quote}\small\ttfamily
+D5.S1.Recurrence.Invariants.\\
+LuschnyA323206Parity.result
+\end{quote}
+Its statement is \texttt{claim}: for all natural $n,k$ there is an integer
+equal, after coercion to the rationals, to the finite sum \eqref{finite},
+and its oddness is equivalent to \eqref{conj}.
+The imported declaration
+\begin{quote}\small\ttfamily
+CatalanCompositionSquareParity.binary\_catalan
+\end{quote}
+in
+\href{https://github.com/the-omega-institute/trureturing/blob/b0f7c01b01511ea00428c1b6edad5dd2b372eaf8/D5/S1/Recurrence/Invariants/CatalanCompositionSquareParity.lean}
+{\texttt{CatalanCompositionSquareParity.lean}}
+states that the coefficient of its shifted Catalan series at index $a$
+is one modulo two exactly when $a=2^e$ for some natural $e$; this is the
+Catalan support used in that proof.
+
+The negative-integer extension and all corollaries have the written
+proofs given here. The two named declarations cover the nonnegative
+classification and its shifted Catalan support, respectively.
+The accompanying \texttt{verify.py} performs exact finite checks of
+5,151 coefficient identities and binary supports ($0\le j\le k\le100$),
+101 Catalan sums, 72 printed source examples, 4,141 integer evaluations
+($-20\le t\le20$, $0\le k\le100$), and 404 diagonal or antidiagonal
+parity identities ($0\le r\le100$). Additional exact checks cover the
+binary products, counts and degrees for $0\le k\le101$,
+5,151 even-even and 5,151 odd-odd ballot values, and 10,201 mixed-parity
+zeros. Formal generating and inverse identities are checked through
+degree 20 at ten integer arguments; 5,151 triangular entries of A064094
+are checked by its independent finite sum. These finite ranges complement the
+universal written proofs.
+
+\clearpage
+\begin{thebibliography}{9}
+\bibitem{posing} Peter Luschny, OEIS A323206, NAME, COMMENTS, FORMULA,
+EXAMPLE and CROSSREFS; contributed February 21, 2019; revision 52,
+March 15, 2026. \url{https://oeis.org/A323206}.
+The conjecture first appears in revision 17, COMMENTS, February 21, 2019:
+\url{https://oeis.org/history/view?seq=A323206&v=17}.
+\bibitem{ballot} The OEIS Foundation Inc., A009766 (Catalan triangle),
+FORMULA, and A238762 (generalized ballot numbers), FORMULA.
+\url{https://oeis.org/A009766}; \url{https://oeis.org/A238762}.
+\bibitem{catalan} The OEIS Foundation Inc., A000108 (Catalan numbers),
+NAME and Franklin T. Adams-Watters's comment of February 8, 2006,
+on the binary valuation. \url{https://oeis.org/A000108}.
+\bibitem{egecioglu} \"Omer E\u{g}ecio\u{g}lu,
+The parity of the Catalan numbers via lattice paths,
+\emph{Fibonacci Quarterly} \textbf{21} (1983), 65--66.
+\url{https://www.mathstat.dal.ca/FQ/Scanned/21-1/egecioglu.pdf}.
+\bibitem{deutsch} Emeric Deutsch and Bruce E. Sagan,
+Congruences for Catalan and Motzkin numbers and related sequences,
+\emph{Journal of Number Theory} \textbf{117} (2006), 191--215,
+Theorem 2.1; preprint July 19, 2004.
+\url{https://arxiv.org/abs/math/0407326}.
+\bibitem{abate} Joseph Abate and Ward Whitt,
+Brownian motion and the generalized Catalan numbers,
+\emph{Journal of Integer Sequences} \textbf{14} (2011), Article 11.2.6,
+equations (3)--(4), (9)--(10).
+\url{https://cs.uwaterloo.ca/journals/JIS/VOL14/Whitt/whitt6.html}.
+\bibitem{diagonals} Peter Luschny, OEIS A323209, A323208 and A323217,
+NAME and FORMULA; contributed February 25, 2019.
+\url{https://oeis.org/A323209}; \url{https://oeis.org/A323208};
+\url{https://oeis.org/A323217}.
+\bibitem{rows} The OEIS Foundation Inc., generalized Catalan sequences
+A064062, A064063, A064087--A064091; columns A001844, A064096,
+A064302--A064305; triangle A064094, FORMULA and EXAMPLE.
+\url{https://oeis.org/A064094}.
+\bibitem{sums} Peter Luschny, OEIS A323207, NAME and FORMULA;
+contributed February 25, 2019. \url{https://oeis.org/A323207}.
+\end{thebibliography}
+\medskip\noindent\small
+\copyright\ 2026 Haobo Ma and Wenlin Zhang.
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+\end{document}

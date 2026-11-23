@@ -1,0 +1,22 @@
+{
+  "id": "luschny-a323206",
+  "revision": 2,
+  "problem_ids": ["luschny-a323206"],
+  "topic": "The parity conjecture in OEIS A323206, COMMENTS, revision 52",
+  "title": "OEIS A323206, COMMENTS (revision 52): Proof of Luschny's parity conjecture and binary consequences",
+  "creators": [
+    {"name": "Haobo Ma", "affiliation": "ChronoAI Pte Ltd, Singapore"},
+    {"name": "Wenlin Zhang", "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"}
+  ],
+  "abstract": "We prove Peter Luschny's conjecture in OEIS A323206, COMMENTS, revision 52 (first posed in revision 17, February 21, 2019): for all nonnegative n,k, the terminating hypergeometric value A(n,k) is odd precisely when n is even or k+2 is a positive power of two. Its coefficients are integer ballot numbers, and their sum is C_(k+1). Thus evaluation modulo two reduces to the constant coefficient or a Catalan number. A binary product describes the complete coefficient support; its consequences include the linked rows, columns, three adjacent diagonals, antidiagonal sums and generalized ballot triangle.",
+  "summary": "A complete proof of the A323206 parity criterion, with a binary coefficient product, support count and degree, integer-argument extensions, formal generating identities and parity consequences for the linked generalized Catalan and ballot sequences.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/b0f7c01b01511ea00428c1b6edad5dd2b372eaf8/D5/S1/Recurrence/Invariants/LuschnyA323206Parity.lean",
+  "posing_source": {"url": "https://oeis.org/A323206", "revision": 52, "locator": "NAME and COMMENTS", "revision_date": "2026-03-15", "first_posing_revision": 17, "first_posing_date": "2019-02-21", "first_posing_url": "https://oeis.org/history/view?seq=A323206&v=17"},
+  "coverage": {
+    "nonnegative_indices_and_integrality": "LuschnyA323206Parity.result",
+    "catalan_binary_support": "CatalanCompositionSquareParity.binary_catalan",
+    "integer_arguments_binary_product_formal_series_and_sequence_corollaries": "Written proofs in note.tex",
+    "finite_checks": "verify.py and verification.json"
+  }
+}

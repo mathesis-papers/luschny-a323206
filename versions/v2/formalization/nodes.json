@@ -1,0 +1,373 @@
+{
+  "nodes": [
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s1",
+      "contributor": null,
+      "identity": "collected:luschny-a323206:2:s1",
+      "kind": "paper",
+      "label": "Theorem",
+      "lean_source": {
+        "revision": "b0f7c01b01511ea00428c1b6edad5dd2b372eaf8",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/b0f7c01b01511ea00428c1b6edad5dd2b372eaf8/D5/S1/Recurrence/Invariants/LuschnyA323206Parity.lean"
+      },
+      "lineage": "collected:luschny-a323206:s1",
+      "macros": {
+        "\\FF": "\\mathbb F_2",
+        "\\NN": "\\mathbb N_0",
+        "\\ZZ": "\\mathbb Z"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "luschny-a323206",
+      "scope": "in_scope",
+      "statement": "For every $k\\in\\NN$, $P_k$ has integer coefficients. For every integer $t$,\n\\[\n P_k(t)\\equiv\n \\begin{cases}\n 1 &\\pmod2,\\quad t\\text{ even},\\\\\n C_{k+1}&\\pmod2,\\quad t\\text{ odd},\n \\end{cases}\n \\qquad C_m=\\frac1{m+1}\\binom{2m}{m}.\n\\]\nConsequently \\eqref{conj} holds for all $n,k\\in\\NN$; the same criterion\nholds for $P_k(t)$ at negative integers.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "OEIS A323206, COMMENTS (revision 52): Proof of Luschny's parity conjecture and binary consequences",
+      "toolchain": null,
+      "version": 2,
+      "work": "luschny-a323206"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s2",
+      "contributor": null,
+      "identity": "collected:luschny-a323206:2:s2",
+      "kind": "paper",
+      "label": "Lemma",
+      "lean_source": {
+        "revision": "b0f7c01b01511ea00428c1b6edad5dd2b372eaf8",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/b0f7c01b01511ea00428c1b6edad5dd2b372eaf8/D5/S1/Recurrence/Invariants/LuschnyA323206Parity.lean"
+      },
+      "lineage": "collected:luschny-a323206:s2",
+      "macros": {
+        "\\FF": "\\mathbb F_2",
+        "\\NN": "\\mathbb N_0",
+        "\\ZZ": "\\mathbb Z"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "luschny-a323206",
+      "scope": "in_scope",
+      "statement": "For $0\\le j\\le k$, the coefficient of $t^j$ in $P_k(t)$ is\n\\begin{equation}\n b_{k,j}=\\binom{k+j}{j}-\\binom{k+j}{j-1}.\n \n\\end{equation}\nIn particular $b_{k,0}=1$, and $\\sum_{j=0}^k b_{k,j}=C_{k+1}$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "OEIS A323206, COMMENTS (revision 52): Proof of Luschny's parity conjecture and binary consequences",
+      "toolchain": null,
+      "version": 2,
+      "work": "luschny-a323206"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s3",
+      "contributor": null,
+      "identity": "collected:luschny-a323206:2:s3",
+      "kind": "paper",
+      "label": "Lemma",
+      "lean_source": {
+        "revision": "b0f7c01b01511ea00428c1b6edad5dd2b372eaf8",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/b0f7c01b01511ea00428c1b6edad5dd2b372eaf8/D5/S1/Recurrence/Invariants/LuschnyA323206Parity.lean"
+      },
+      "lineage": "collected:luschny-a323206:s3",
+      "macros": {
+        "\\FF": "\\mathbb F_2",
+        "\\NN": "\\mathbb N_0",
+        "\\ZZ": "\\mathbb Z"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "luschny-a323206",
+      "scope": "in_scope",
+      "statement": "For every $m\\in\\NN$, $C_m$ is odd if and only if $m+1$ is a power of two.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "OEIS A323206, COMMENTS (revision 52): Proof of Luschny's parity conjecture and binary consequences",
+      "toolchain": null,
+      "version": 2,
+      "work": "luschny-a323206"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s4",
+      "contributor": null,
+      "identity": "collected:luschny-a323206:2:s4",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "b0f7c01b01511ea00428c1b6edad5dd2b372eaf8",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/b0f7c01b01511ea00428c1b6edad5dd2b372eaf8/D5/S1/Recurrence/Invariants/LuschnyA323206Parity.lean"
+      },
+      "lineage": "collected:luschny-a323206:s4",
+      "macros": {
+        "\\FF": "\\mathbb F_2",
+        "\\NN": "\\mathbb N_0",
+        "\\ZZ": "\\mathbb Z"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "luschny-a323206",
+      "scope": "in_scope",
+      "statement": "For $0\\le j\\le k$, $b_{k,j}$ is odd precisely when $j$ and $k+1$ have\nno common nonzero binary digit. Equivalently,\n\\[\n P_k(t)\\equiv\\sum_{\\substack{0\\le j\\le k\\\\j\\mathbin{\\&}(k+1)=0}}t^j\n \\quad\\text{in }\\FF[t],\n\\]\nwhere $\\mathbin{\\&}$ denotes binary bitwise AND.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "OEIS A323206, COMMENTS (revision 52): Proof of Luschny's parity conjecture and binary consequences",
+      "toolchain": null,
+      "version": 2,
+      "work": "luschny-a323206"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s5",
+      "contributor": null,
+      "identity": "collected:luschny-a323206:2:s5",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "b0f7c01b01511ea00428c1b6edad5dd2b372eaf8",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/b0f7c01b01511ea00428c1b6edad5dd2b372eaf8/D5/S1/Recurrence/Invariants/LuschnyA323206Parity.lean"
+      },
+      "lineage": "collected:luschny-a323206:s5",
+      "macros": {
+        "\\FF": "\\mathbb F_2",
+        "\\NN": "\\mathbb N_0",
+        "\\ZZ": "\\mathbb Z"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "luschny-a323206",
+      "scope": "in_scope",
+      "statement": "Put $m=k+1$ and $h=\\lfloor\\log_2 m\\rfloor$. Write $m_i$ for the $i$th\nbinary digit of $m$, and let $s_2(m)$ count its nonzero digits. Then\n\\[\n P_k(t)=\\prod_{\\substack{0\\le i<h\\\\m_i=0}}(1+t^{2^i})\n \\quad\\text{in }\\FF[t].\n\\]\nExactly $2^{h+1-s_2(m)}$ coefficients of $P_k$ are odd, and the degree\nof its reduction modulo two is $2^{h+1}-m-1$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "OEIS A323206, COMMENTS (revision 52): Proof of Luschny's parity conjecture and binary consequences",
+      "toolchain": null,
+      "version": 2,
+      "work": "luschny-a323206"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s6",
+      "contributor": null,
+      "identity": "collected:luschny-a323206:2:s6",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "b0f7c01b01511ea00428c1b6edad5dd2b372eaf8",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/b0f7c01b01511ea00428c1b6edad5dd2b372eaf8/D5/S1/Recurrence/Invariants/LuschnyA323206Parity.lean"
+      },
+      "lineage": "collected:luschny-a323206:s6",
+      "macros": {
+        "\\FF": "\\mathbb F_2",
+        "\\NN": "\\mathbb N_0",
+        "\\ZZ": "\\mathbb Z"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "luschny-a323206",
+      "scope": "in_scope",
+      "statement": "Let $C(x)=\\sum_{r\\ge0}C_rx^r$ and\n$G(t,x)=\\sum_{k\\ge0}P_k(t)x^k$. In $\\ZZ[t][[x]]$,\n\\begin{equation}\n G(t,x)=\\frac{C(tx)}{1-xC(tx)},\\qquad\n 1+xG(t,x)=\\frac1{1-xC(tx)}.\n\\end{equation}\nIf $U=xG(t,x)$, then\n\\[\n x=\\frac{U(1-(t-1)U)}{(1+U)^2}.\n\\]\nThus $U$ is the compositional inverse of\n$y(1-(t-1)y)/(1+y)^2$. Also $1+xG$ is the formal continued fraction\nwith first numerator $x$ and every subsequent numerator $tx$,\nall subtracted from unit denominators.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "OEIS A323206, COMMENTS (revision 52): Proof of Luschny's parity conjecture and binary consequences",
+      "toolchain": null,
+      "version": 2,
+      "work": "luschny-a323206"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s7",
+      "contributor": null,
+      "identity": "collected:luschny-a323206:2:s7",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "b0f7c01b01511ea00428c1b6edad5dd2b372eaf8",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/b0f7c01b01511ea00428c1b6edad5dd2b372eaf8/D5/S1/Recurrence/Invariants/LuschnyA323206Parity.lean"
+      },
+      "lineage": "collected:luschny-a323206:s7",
+      "macros": {
+        "\\FF": "\\mathbb F_2",
+        "\\NN": "\\mathbb N_0",
+        "\\ZZ": "\\mathbb Z"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "luschny-a323206",
+      "scope": "in_scope",
+      "statement": "For $r\\in\\NN$, put $S_r=\\sum_{k=0}^r A(r-k,k)$. Then\n\\begin{align*}\n A(r,r)\\text{ odd}&\\iff r\\text{ even},\\\\\n A(r,r+1)\\text{ odd}&\\iff r\\text{ even or }r=2^e-3\\ (e\\ge2),\\\\\n A(r+1,r)\\text{ odd}&\\iff r\\text{ odd or }r=2^e-2\\ (e\\ge1),\\\\\n S_{2m}&\\equiv m+1\\pmod2,\\\\\n S_{2m+1}&\\equiv m+1+\\lfloor\\log_2(2m+2)\\rfloor\\pmod2\\quad(m\\in\\NN).\n\\end{align*}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "OEIS A323206, COMMENTS (revision 52): Proof of Luschny's parity conjecture and binary consequences",
+      "toolchain": null,
+      "version": 2,
+      "work": "luschny-a323206"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s8",
+      "contributor": null,
+      "identity": "collected:luschny-a323206:2:s8",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "b0f7c01b01511ea00428c1b6edad5dd2b372eaf8",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/b0f7c01b01511ea00428c1b6edad5dd2b372eaf8/D5/S1/Recurrence/Invariants/LuschnyA323206Parity.lean"
+      },
+      "lineage": "collected:luschny-a323206:s8",
+      "macros": {
+        "\\FF": "\\mathbb F_2",
+        "\\NN": "\\mathbb N_0",
+        "\\ZZ": "\\mathbb Z"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "luschny-a323206",
+      "scope": "in_scope",
+      "statement": "For the linked sequences \\cite{rows}, use the following index conventions.\nLet $R_m(0)=1$ and $R_m(s)=P_{s-1}(m)$ for $s\\ge1$. Then\n\\[\n R_m(s)\\text{ odd}\\iff m\\text{ even or }s+1=2^e\\ (e\\ge1),\n \\qquad(s\\ge1).\n\\]\nThese are the generalized Catalan rows A064062, A064063 and\nA064087--A064091 for $m=2,3,4,5,6,7,8$, respectively, with their\ninitial term retained. The six columns A001844, A064096,\nA064302--A064305 are $P_k(n)$ for $k=2,3,4,5,6,7$:\nthe first and fifth are entirely odd; the other four are odd exactly\nat even $n$.\n\nIn the notation $T(N,m)$ of A064094, $0\\le m\\le N$,\n\\[\n T(N,N)=1,\\quad T(N,m)=P_{N-m-1}(m)\\ (N>m),\n\\]\nso for $N>m$ it is odd exactly when $m$ is even or\n$N-m+1$ is a power of two.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "OEIS A323206, COMMENTS (revision 52): Proof of Luschny's parity conjecture and binary consequences",
+      "toolchain": null,
+      "version": 2,
+      "work": "luschny-a323206"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s9",
+      "contributor": null,
+      "identity": "collected:luschny-a323206:2:s9",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "b0f7c01b01511ea00428c1b6edad5dd2b372eaf8",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/b0f7c01b01511ea00428c1b6edad5dd2b372eaf8/D5/S1/Recurrence/Invariants/LuschnyA323206Parity.lean"
+      },
+      "lineage": "collected:luschny-a323206:s9",
+      "macros": {
+        "\\FF": "\\mathbb F_2",
+        "\\NN": "\\mathbb N_0",
+        "\\ZZ": "\\mathbb Z"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "luschny-a323206",
+      "scope": "in_scope",
+      "statement": "Use A238762's ballot notation $B(p,q)$, $0\\le p\\le q$. For\n$0\\le j\\le k$,\n\\[\n B(2j,2k)=b_{k,j},\\qquad\n B(2j+1,2k+1)=(k+j+1)b_{k,j}.\n\\]\nMixed-parity arguments give zero. Consequently the even-even value is\nodd exactly when $j\\mathbin{\\&}(k+1)=0$; the odd-odd value is odd exactly\nwhen this condition holds and $k+j$ is even.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "OEIS A323206, COMMENTS (revision 52): Proof of Luschny's parity conjecture and binary consequences",
+      "toolchain": null,
+      "version": 2,
+      "work": "luschny-a323206"
+    }
+  ]
+}
