@@ -5,13 +5,15 @@
 We prove Peter Luschny's conjecture in OEIS A323206, COMMENTS, revision 52 (first posed in revision 17, February 21, 2019): for all nonnegative n,k, the terminating hypergeometric value A(n,k) is odd precisely when n is even or k+2 is a positive power of two. Its coefficients are integer ballot numbers, and their sum is C_(k+1). Thus evaluation modulo two reduces to the constant coefficient or a Catalan number. A binary product describes the complete coefficient support; its consequences include the linked rows, columns, three adjacent diagonals, antidiagonal sums and generalized ballot triangle.
 
 - PDF: [frozen public file](paper.pdf)
+- DOI: [https://doi.org/10.5281/zenodo.24407820](https://doi.org/10.5281/zenodo.24407820)
+- Concept DOI: [https://doi.org/10.5281/zenodo.24407819](https://doi.org/10.5281/zenodo.24407819)
 - License: CC-BY-4.0
 - Version: 2
 - Mathesis record: [luschny-a323206](https://mathesis-omega-research.apps.chrono-ai.fun/papers/luschny-a323206?version=2)
 
 ## How to cite
 
-Haobo Ma, Wenlin Zhang (2026). OEIS A323206, COMMENTS (revision 52): Proof of Luschny's parity conjecture and binary consequences. Mathesis, version 2. https://mathesis-omega-research.apps.chrono-ai.fun/papers/luschny-a323206?version=2
+Haobo Ma, Wenlin Zhang (2026). OEIS A323206, COMMENTS (revision 52): Proof of Luschny's parity conjecture and binary consequences. Mathesis, version 2. https://doi.org/10.5281/zenodo.24407820
 
 ## Statement progress
 
